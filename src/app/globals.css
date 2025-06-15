@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
+/* Theme Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --color-primary: 178 34 34; /* special-red in RGB */
+  --color-primary-hover: 153 27 27; /* red-900 in RGB */
+  --color-primary-light: 239 68 68; /* red-500 in RGB */
+
+  /* Secondary Colors */
+  --color-secondary: 55 65 81; /* gray-700 in RGB */
+  --color-secondary-hover: 31 41 55; /* gray-800 in RGB */
+  --color-secondary-light: 156 163 175; /* gray-400 in RGB */
+
+  /* Background Colors */
+  --color-bg-primary: 255 255 255; /* white */
+  --color-bg-secondary: 249 250 251; /* gray-50 */
+  --color-bg-accent: 254 242 242; /* red-50 */
+
+  /* Text Colors */
+  --color-text-primary: 17 24 39; /* gray-900 */
+  --color-text-secondary: 75 85 99; /* gray-600 */
+  --color-text-muted: 156 163 175; /* gray-400 */
+  /* Border Colors */
+  --color-border: 229 231 235; /* gray-200 */
+  --color-border-hover: 209 213 219; /* gray-300 */
+
+  /* Restaurant specific colors */
+  --color-restaurant-red: 178 34 34; /* red for restaurant theme */
+  --color-restaurant-dark: 17 24 39; /* dark text color */
+  --color-restaurant-orange: 249 115 22; /* orange for price tags */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark theme support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-bg-primary: 17 24 39; /* gray-900 */
+    --color-bg-secondary: 31 41 55; /* gray-800 */
+    --color-text-primary: 255 255 255; /* white */
+    --color-text-secondary: 209 213 219; /* gray-300 */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom utility classes using theme variables */
+@layer utilities {
+  .bg-theme-primary {
+    background-color: rgb(var(--color-primary));
+  }
+
+  .bg-theme-primary-hover:hover {
+    background-color: rgb(var(--color-primary-hover));
+  }
+
+  .text-theme-primary {
+    color: rgb(var(--color-primary));
+  }
+
+  .text-theme-primary-hover:hover {
+    color: rgb(var(--color-primary-hover));
+  }
+
+  .text-theme-secondary {
+    color: rgb(var(--color-secondary));
+  }
+
+  .text-theme-secondary-hover:hover {
+    color: rgb(var(--color-secondary-hover));
+  }
+
+  .bg-theme-bg {
+    background-color: rgb(var(--color-bg-primary));
+  }
+
+  .bg-theme-bg-secondary {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .text-theme-text {
+    color: rgb(var(--color-text-primary));
+  }
+
+  .text-theme-text-secondary {
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .border-theme {
+    border-color: rgb(var(--color-border));
+  }
+
+  .border-theme-hover:hover {
+    border-color: rgb(var(--color-border-hover));
+  }
+  /* Restaurant theme utilities */
+  .text-restaurant-red {
+    color: rgb(var(--color-restaurant-red));
+  }
+
+  .text-restaurant-red:hover,
+  .hover\:text-restaurant-red:hover {
+    color: rgb(var(--color-restaurant-red));
+  }
+
+  .bg-restaurant-red {
+    background-color: rgb(var(--color-restaurant-red));
+  }
+
+  .bg-restaurant-red:hover {
+    background-color: rgb(var(--color-restaurant-red) / 0.9);
+  }
+
+  .text-restaurant-dark {
+    color: rgb(var(--color-restaurant-dark));
+  }
+
+  .bg-restaurant-orange {
+    background-color: rgb(var(--color-restaurant-orange));
+  }
+  /* Font utilities */
+  .font-merriweather {
+    font-family: var(--font-merriweather);
+  }
+  /* Title utilities with Merriweather font */
+  .title-primary {
+    font-family: var(--font-merriweather);
+    font-weight: 700;
+  }
+
+  .title-secondary {
+    font-family: var(--font-merriweather);
+    font-weight: 600;
+  }
+
+  .title-tertiary {
+    font-family: var(--font-merriweather);
+    font-weight: 500;
+  }
+  /* Global heading styles with Merriweather */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .heading {
+    font-family: var(--font-merriweather) !important;
+  }
+
+  /* Override specific heading weights */
+  h1,
+  .heading-1 {
+    font-weight: 700 !important;
+  }
+
+  h2,
+  .heading-2 {
+    font-weight: 600 !important;
+  }
+  h3,
+  h4,
+  h5,
+  h6,
+  .heading-3,
+  .heading-4,
+  .heading-5,
+  .heading-6 {
+    font-weight: 500 !important;
+  }
+}
+
+/* Viewport Height Utilities for better mobile support */
+.min-h-screen-mobile {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+}
+
+.h-screen-mobile {
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
 }

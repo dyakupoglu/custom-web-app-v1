@@ -1,36 +1,187 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Custom Web Application
 
-## Getting Started
+> A modern, responsive web application built with Next.js, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15.3.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Overview
+
+A modern, full-stack web application showcasing best practices in React development. Built with cutting-edge technologies to deliver exceptional performance and user experience.
+
+### ✨ Key Features
+
+- 🎨 **Modern Design** - Clean, professional interface with responsive design
+- 📱 **Fully Responsive** - Optimized for all devices (desktop, tablet, mobile)
+- ⚡ **Fast Performance** - Optimized for speed and SEO
+- � **TypeScript** - Full type safety throughout the application
+- � **Component-Based** - Reusable and maintainable component architecture
+- ♿ **Accessible** - WCAG compliant with proper ARIA labels
+- � **SEO Optimized** - Built-in SEO features with Next.js
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18.0 or higher
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd custom-web-app
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- **Framework**: [Next.js 15.3.3](https://nextjs.org/) - React framework with SSR/SSG
+- **Language**: [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- **Icons**: Custom SVG icons optimized for performance
+
+### Development Tools
+
+- **Linting**: ESLint with TypeScript rules
+- **Code Formatting**: Prettier (configured)
+- **Build System**: Next.js built-in build system
+- **Development**: Hot reloading and fast refresh
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout component
+│   ├── page.tsx           # Homepage
+│   ├── globals.css        # Global styles
+│   ├── contact/           # Contact page
+│   └── menu/              # Menu page with layout
+├── components/            # Reusable React components
+│   ├── Header.tsx         # Navigation header with mobile menu
+│   ├── Footer.tsx         # Footer component
+│   ├── Hero.tsx           # Hero section component
+│   ├── MenuCard.tsx       # Card component
+│   ├── ImageSlider.tsx    # Image carousel component
+│   └── StatCounter.tsx    # Animated counter component
+├── constants/             # Application constants
+│   └── index.ts          # App configuration and data
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utility libraries
+├── types/                 # TypeScript type definitions
+└── utils/                 # Helper functions
+    └── cn.ts             # Tailwind CSS class name utility
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Styling Approach
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Utility-First**: Tailwind CSS for rapid development
+- **Component-Based**: Reusable styled components
+- **Responsive Design**: Mobile-first approach
+- **Modern UI**: Clean and professional interface
 
-## Learn More
+### Responsive Breakpoints
 
-To learn more about Next.js, take a look at the following resources:
+- **Mobile First**: Designed primarily for mobile users
+- **Breakpoints**:
+  - `sm`: 640px+ (Small tablets)
+  - `md`: 768px+ (Tablets)
+  - `lg`: 1024px+ (Laptops)
+  - `xl`: 1280px+ (Desktops)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Available Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
 
-## Deploy on Vercel
+# Type Checking
+npx tsc --noEmit     # TypeScript type checking
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Vercel (Recommended)
+
+1. Connect your GitHub repository to [Vercel](https://vercel.com)
+2. Configure build settings (auto-detected for Next.js)
+3. Deploy with automatic CI/CD
+
+### Other Platforms
+
+- **Netlify**: Static site deployment
+- **AWS Amplify**: Full-stack deployment
+- **DigitalOcean**: VPS deployment
+- **Traditional Hosting**: Build static files with `npm run build`
+
+## 🚀 Performance Features
+
+- **Server-Side Rendering (SSR)**: Fast initial page loads
+- **Static Site Generation (SSG)**: Pre-built pages for better performance
+- **Code Splitting**: Automatic code splitting for optimal loading
+- **Image Optimization**: Built-in Next.js image optimization
+- **Font Optimization**: Automatic font loading optimization
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## � Development Guidelines
+
+### Code Style
+
+- Use TypeScript for all new files
+- Follow ESLint and Prettier configurations
+- Use meaningful component and variable names
+- Write clean, self-documenting code
+
+### Component Structure
+
+- Keep components small and focused
+- Use proper TypeScript interfaces
+- Implement proper error handling
+- Follow React best practices
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+  <p><strong>Custom Web Application</strong> - Built with Modern Technologies</p>
+  <p>Made with ❤️ using Next.js, TypeScript & Tailwind CSS</p>
+</div>
