@@ -177,7 +177,10 @@ npx tsc --noEmit     # TypeScript type checking
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/dyakupoglu/custom-web-app-v1/blob/main/LICENSE) file for details.
+
+**MIT License**  
+Copyright (c) 2025 Doğukan Bekir Yakupoğlu
 
 ---
 
